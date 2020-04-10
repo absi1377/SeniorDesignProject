@@ -5,7 +5,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <string.h>
-#include <string>
+
 
 using namespace std;
 
@@ -15,7 +15,7 @@ int main()
     int listening = socket(AF_INET, SOCK_STREAM, 0);
     if (listening == -1)
     {
-        cerr << "Can't create a socket! Quitting" << endl;
+        cerr << "Can't create a socket!" << endl;
         return -1;
     }
 
@@ -49,7 +49,7 @@ int main()
     else
     {
         inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
-        cout << host << " connected on port " << ntohs(client.sin_port) << endl;
+        cout << host << " connected  port " << ntohs(client.sin_port) << endl;
     }
 
     // Close listening socket
